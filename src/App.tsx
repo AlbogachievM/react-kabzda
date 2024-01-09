@@ -8,6 +8,12 @@ function App() {
     <div className="App">
       <Accordion titleValue='Menu' collapsed={true}/>
       <Accordion titleValue='Users' collapsed={false}/>
+
+      <Raiting value={1}/>
+      <Raiting value={2}/>
+      <Raiting value={3}/>
+      <Raiting value={4}/>
+      <Raiting value={5}/>
     </div>
   );
 }

@@ -8,18 +8,13 @@ type AccordionPropsType = {
 
 const Accordion: FC<AccordionPropsType> = (props) => {
 
-    if (props.collapsed === true) {
         return (
-            <div>
-                <AccordionTitle title={props.titleValue} />
-            </div>
-        )
-    } else {
         <div>
             <AccordionTitle title={props.titleValue} />
-            <AccordionBody />
+            {!props.collapsed && <AccordionBody />}
         </div>
-    }
+        
+        )
 };
 
 type AccordionTitlePropsType = {
