@@ -2,10 +2,28 @@
 import './App.css';
 import Accordion from './components/Accordion';
 import Raiting from './components/Raiting';
+import { OnOff } from './components/OnOff';
+import UnControlledAccordion from './components/UnControlledAccordion';
+import UnControlledRaiting from './components/UnControlledRaiting';
 
 function App() {
   return (
     <div className="App">
+
+    <OnOff />
+    <OnOff />
+    <OnOff />
+    
+    <UnControlledAccordion titleValue='Menu'/>
+    <UnControlledAccordion titleValue='Users'/>
+    
+
+    <UnControlledRaiting/>
+    <UnControlledRaiting/>
+    <UnControlledRaiting/>
+    <UnControlledRaiting/>
+    <UnControlledRaiting/>
+
       <Accordion titleValue='Menu' collapsed={true}/>
       <Accordion titleValue='Users' collapsed={false}/>
 

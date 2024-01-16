@@ -20,12 +20,7 @@ const Raiting = (props: RaitingPropsType) => {
 type StarPropsType = {
     selected: boolean
 }
-const Star = (props: StarPropsType) => {
-    if (props.selected === true) {
-        return <span><b> star </b></span>
-    } else {
-        return <span> star </span>
-    }
-};
+const Star = (props: StarPropsType) => props.selected ? <span><b> star </b></span> : <span> star </span>
+
 
 export default Raiting
