@@ -1,47 +1,48 @@
 
 import './App.css';
 import Accordion from './components/Accordion';
-import Raiting from './components/Raiting';
+import Raiting, { RaitingValueType } from './components/Raiting';
 import { OnOff } from './components/OnOff';
 import UnControlledAccordion from './components/UnControlledAccordion';
 import UnControlledRaiting from './components/UnControlledRaiting';
+import { useState } from 'react';
+import { UnControlledOnOff } from './components/UnControlledOnOff';
 
 function App() {
+
+  let [ratingValue, setRatingValue] = useState<RaitingValueType>(0)
+  let [accordionCollapsed, setAccordionCollapsed] = useState(false)
+  let [swithOn, setSwithOn] = useState(false)
+
   return (
     <div className="App">
 
-    <OnOff />
-    <OnOff />
-    <OnOff />
-    
-    <UnControlledAccordion titleValue='Menu'/>
-    <UnControlledAccordion titleValue='Users'/>
-    
+      <Raiting value={ratingValue} onClick={setRatingValue} />
 
-    <UnControlledRaiting/>
-    <UnControlledRaiting/>
-    <UnControlledRaiting/>
-    <UnControlledRaiting/>
-    <UnControlledRaiting/>
+      <Accordion
+        titleValue='Menu'
+        collapsed={accordionCollapsed}
+        setAccordionCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
+      />
 
-      <Accordion titleValue='Menu' collapsed={true}/>
-      <Accordion titleValue='Users' collapsed={false}/>
+      <OnOff on={swithOn} onChange={setSwithOn} />
+      <UnControlledOnOff onChanged={setSwithOn} />
 
-      <Raiting value={1}/>
-      <Raiting value={2}/>
-      <Raiting value={3}/>
-      <Raiting value={4}/>
-      <Raiting value={5}/>
+      <UnControlledAccordion titleValue='Menu' />
+
+      <UnControlledRaiting />
+
+
     </div>
   );
 }
- 
+
 type PageTitlePropsType = {
   title: string
 }
 
-function PageTitle(props:PageTitlePropsType){
-    return <h1>{props.title}</h1>
+function PageTitle(props: PageTitlePropsType) {
+  return <h1>{props.title}</h1>
 }
 
 export default App;

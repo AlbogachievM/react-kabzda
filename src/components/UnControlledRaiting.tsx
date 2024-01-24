@@ -3,34 +3,29 @@ import { useState } from 'react';
 
 
 const UnControlledRaiting = () => {
-
     let [value, setValue] = useState(0)
-    function onClickHandler(number: number) {
-        setValue(number)
-    }
+
     return (
         <div>
-            <Star id={1} selected={value > 0} callback={onClickHandler} />
-            <Star id={2} selected={value > 1} callback={onClickHandler} />
-            <Star id={3} selected={value > 2} callback={onClickHandler} />
-            <Star id={4} selected={value > 3} callback={onClickHandler} />
-            <Star id={5} selected={value > 4} callback={onClickHandler} />
+            <Star selected={value > 0} setValue={() => { setValue(1) }} />
+            <Star selected={value > 1} setValue={() => { setValue(2) }} />
+            <Star selected={value > 2} setValue={() => { setValue(3) }} />
+            <Star selected={value > 3} setValue={() => { setValue(4) }} />
+            <Star selected={value > 4} setValue={() => { setValue(5) }} />
         </div>
     );
 };
 
 type StarPropsType = {
     selected: boolean
-    id: number
-    callback: (number: number) => void
+    setValue: () => void
 }
 const Star = (props: StarPropsType) => {
+
     return (
-        props.selected
-            ?
-            <span onClick={() => props.callback(props.id)}><b> star </b></span>
-            :
-            <span onClick={() => props.callback(props.id)}> star </span>
+        <span onClick={() => props.setValue()}>
+            {props.selected ? <b> start </b> : 'star'}
+        </span>
     )
 }
 export default UnControlledRaiting

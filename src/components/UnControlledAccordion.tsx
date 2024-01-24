@@ -9,6 +9,7 @@ type AccordionPropsType = {
 
 const UnControlledAccordion: FC<AccordionPropsType> = (props) => {
     let [collapsed, setCollapsed] = useState(false)
+
     function onClickCollapsedHandler() {
         setCollapsed(!collapsed)
     }
@@ -30,7 +31,7 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 
     return (
         <>
-            <h2 onClick={props.collapsed}>---{props.title}---</h2>
+            <h2 onClick={() => props.collapsed()}>---{props.title}---</h2>
         </>
     )
 }
