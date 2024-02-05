@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 type PropsType = {
     onChanged: (on: boolean) => void
 }
 
 
-export function UnControlledOnOff(props: PropsType) {
+export const UnControlledOnOff = (props: PropsType) => {
 
     let [on, setOn] = useState(false)
 
@@ -40,6 +40,7 @@ export function UnControlledOnOff(props: PropsType) {
         setOn(true)
         props.onChanged(true)
     }
+
     function offClickHandler() {
         setOn(false)
         props.onChanged(false)
@@ -52,5 +53,5 @@ export function UnControlledOnOff(props: PropsType) {
             <div onClick={offClickHandler} style={offStyle}>Off</div>
             <div style={IndicatorStyle}></div>
         </div>
-    );
-};
+    )
+}

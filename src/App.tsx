@@ -1,12 +1,12 @@
 
 import './App.css';
-import Accordion from './components/Accordion';
-import Raiting, { RaitingValueType } from './components/Raiting';
-import { OnOff } from './components/OnOff';
-import UnControlledAccordion from './components/UnControlledAccordion';
-import UnControlledRaiting from './components/UnControlledRaiting';
+import {Accordion} from './components/Accordion/Accordion';
+import {Raiting, RaitingValueType } from './components/Raiting/Raiting';
+import { OnOff } from './components/OnOff/OnOff';
+import {UnControlledRaiting} from './components/UnControlledRaiting/UnControlledRaiting';
 import { useState } from 'react';
-import { UnControlledOnOff } from './components/UnControlledOnOff';
+import { UnControlledOnOff } from './components/UnControlledOnOff/UnControlledOnOff';
+import {UnControlledAccordion} from "./components/UnControlledAccrordion/UnControlledAccordion";
 
 function App() {
 

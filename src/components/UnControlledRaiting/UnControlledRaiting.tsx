@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-const UnControlledRaiting = () => {
+export const UnControlledRaiting = () => {
     let [value, setValue] = useState(0)
 
     return (
@@ -28,4 +28,3 @@ const Star = (props: StarPropsType) => {
         </span>
     )
 }
-export default UnControlledRaiting

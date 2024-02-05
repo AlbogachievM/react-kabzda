@@ -9,7 +9,7 @@ export default {
 }
 
 const callback = action('on or off clicked')
-export const OnModeUnControlled = () => <UnControlledOnOff onChanged={callback}/>
+export const OnMode = () => <UnControlledOnOff onChanged={callback}/>
 
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(true)

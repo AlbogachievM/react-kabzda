@@ -8,7 +8,7 @@ type RaitingPropsType = {
     onClick: (value: RaitingValueType) => void
 }
 
-const Raiting = (props: RaitingPropsType) => {
+export const Raiting = (props: RaitingPropsType) => {
     return (
         <div>
             <Star selected={props.value > 0} onClick={props.onClick} value={1} />
@@ -31,5 +31,3 @@ const Star = (props: StarPropsType) => <span onClick={()=>props.onClick(props.va
 
 </span>
 
-
-export default Raiting

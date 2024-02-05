@@ -7,7 +7,7 @@ type AccordionPropsType = {
     setAccordionCollapsed: () => void
 }
 
-const Accordion: FC<AccordionPropsType> = (props) => {
+export const Accordion: FC<AccordionPropsType> = (props) => {
 
     return (
         <div>
@@ -30,7 +30,7 @@ type AccordionTitlePropsType = {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
-        <h2 onClick={props.setAccordionCollapsed}>---{props.title}---</h2>
+        <h2 onClick={(e)=>props.setAccordionCollapsed()}>---{props.title}---</h2>
     )
 }
 
@@ -45,5 +45,3 @@ function AccordionBody() {
         </ul>
     )
 }
-
-export default Accordion;

@@ -7,7 +7,7 @@ type AccordionPropsType = {
 
 
 
-const UnControlledAccordion: FC<AccordionPropsType> = (props) => {
+export const UnControlledAccordion: FC<AccordionPropsType> = (props) => {
     let [collapsed, setCollapsed] = useState(false)
 
     function onClickCollapsedHandler() {
@@ -47,5 +47,3 @@ function AccordionBody() {
         </ul>
     )
 }
-
-export default UnControlledAccordion;
