@@ -50,7 +50,6 @@ type AccordionBodyType = {
 }
 
 function AccordionBody(props: AccordionBodyType) {
-
     return (
         <ul>
             {props.items.map((item, index) => <li onClick={() => {
