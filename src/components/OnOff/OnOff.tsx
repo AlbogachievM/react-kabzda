@@ -5,10 +5,7 @@ type PropsType = {
     onChange: (on: boolean) => void
 }
 
-
 export function OnOff(props: PropsType) {
-
-
     const onStyle = {
         display: 'inline-block',
         width: '30px',
@@ -35,7 +32,6 @@ export function OnOff(props: PropsType) {
         marginLeft: '5px',
         backgroundColor: props.on ? 'green' : 'red'
     }
-
     return (
         <div>
             <div onClick={() => { props.onChange(true) }} style={onStyle}>On</div>

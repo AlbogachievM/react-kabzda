@@ -16,16 +16,18 @@ type AccordionPropsType = {
 
 }
 
+const AccordionTitleM = React.memo(AccordionTitle)
+const AccordionBodyM = React.memo(AccordionBody)
 
 export const Accordion: FC<AccordionPropsType> = (props) => {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}
-                            setAccordionCollapsed={props.setAccordionCollapsed}
-                            value={!props.collapsed}
+            <AccordionTitleM title={props.titleValue}
+                             setAccordionCollapsed={props.setAccordionCollapsed}
+                             value={!props.collapsed}
             />
-            {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
+            {!props.collapsed && <AccordionBodyM items={props.items} onClick={props.onClick}/>}
         </div>
 
     )
@@ -52,10 +54,11 @@ type AccordionBodyType = {
 function AccordionBody(props: AccordionBodyType) {
     return (
         <ul>
-            {props.items.map((item, index) => <li onClick={() => {
-                props.onClick(item.value)
-            }}
-                                                  key={index}>{item.title}</li>)}
+            {props.items.map((item, index) => <li
+                onClick={() => {
+                    props.onClick(item.value)
+                }}
+                key={index}>{item.title}</li>)}
         </ul>
     )
 }

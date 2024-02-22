@@ -8,15 +8,18 @@ export default {
     component: Accordion,
 }
 
+const AccordionM = React.memo(Accordion)
+
+
 const callback = action('accordion mode change event fired')
 const onClickCallback = action('accordion mode change event fired')
-export const MenuCollapsedMode = () => <Accordion
+
+export const MenuCollapsedMode = () => <AccordionM
     titleValue={'Menu'} collapsed={true}
     setAccordionCollapsed={callback}
     onClick={onClickCallback}
     items={[]}/>
-
-export const UsersUnCollapsedMode = () => <Accordion
+export const UsersUnCollapsedMode = () => <AccordionM
     titleValue={'Menu'} collapsed={false}
     setAccordionCollapsed={callback}
     onClick={onClickCallback}
@@ -26,11 +29,10 @@ export const UsersUnCollapsedMode = () => <Accordion
         {title:'Dimych', value: '3'},
         {title:'Anton', value: '4'},
     ]}/>
-
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(true)
 
-    return <Accordion
+    return <AccordionM
         titleValue={'Menu'} collapsed={value}
         setAccordionCollapsed={() => setValue(!value)}
         onClick={onClickCallback}

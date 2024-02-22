@@ -7,6 +7,7 @@ export default {
 }
 
 const Users = [
+    {title: 'none', value: '0'},
     {title: 'Anton', value: '1'},
     {title: 'Artem', value: '2'},
     {title: 'Alex', value: '3'},
@@ -18,7 +19,7 @@ const callback = action('accordion mode change event fired')
 export const SelectedMode = () => {
     return (
         <Select value={'none'}
-                onChange={() => {}}
+                onChange={() => callback}
                 items={Users}/>
     )
 }

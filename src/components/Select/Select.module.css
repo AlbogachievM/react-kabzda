@@ -1,0 +1,22 @@
+.select{
+    position: relative;
+}
+.select h3{
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    max-width: 100px;
+    width: 100%;
+
+}
+.items{
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.item.selected{
+    background-color: blue;
+    color: white;
+}
