@@ -24,7 +24,7 @@ export const HelpsToReactMemo = () => {
     const [users, setUsers] = useState(['Anton', 'Misha', 'ALex'])
 
     const newArrray = useMemo(() => {
-        const newArray = users.filter(user => user.toLowerCase().indexOf('a') > -1)
+        const newArray = users.filter(user => user.toLowerCase().indexOf('a') > -1);
         return newArray
     }, [users])
 
