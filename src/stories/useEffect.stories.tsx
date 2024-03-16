@@ -25,25 +25,17 @@ export const SetTimeoutExample = () => {
 
     let [counter, setCounter] = useState(0)
 
-    console.log('SetTimeoutExample')
-
     useEffect(() => {
         setInterval(() => {
-            let a = new Date().getSeconds()
-            console.log(a)
-            setCounter(state => state = a)
+            setCounter(state => state + 1)
         }, 1000)
 
     }, []);
 
-    let date = {h: new Date().getHours(), m: new Date().getMinutes(), s: counter}
-
 
     return (
         <>
-            {date.h}:
-            {date.m}:
-            {date.s}
+            Hellow, counter: {counter}
         </>
     )
 }
